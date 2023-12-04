@@ -13,7 +13,8 @@
   },
   "dependencies": {
     "@shopify/app": "3.51.2",
-    "@shopify/cli": "3.51.2"
+    "@shopify/cli": "3.51.2",
+    "@shopify/shopify-app-session-storage-postgresql": "^2.0.1"
   },
   "author": "mvt-dev-005",
   "private": true,

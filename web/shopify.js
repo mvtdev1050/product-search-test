@@ -1,6 +1,7 @@
 import { BillingInterval, LATEST_API_VERSION } from "@shopify/shopify-api";
 import { shopifyApp } from "@shopify/shopify-app-express";
-import { SQLiteSessionStorage } from "@shopify/shopify-app-session-storage-sqlite";
+// import { SQLiteSessionStorage, PostgresSessionStorage } from "@shopify/shopify-app-session-storage-sqlite";
+import { PostgreSQLSessionStorage } from "@shopify/shopify-app-session-storage-postgresql";
 import { restResources } from "@shopify/shopify-api/rest/admin/2023-04";
 
 const DB_PATH = `${process.cwd()}/database.sqlite`;
@@ -30,7 +31,10 @@ const shopify = shopifyApp({
     path: "/api/webhooks",
   },
   // This should be replaced with your preferred storage strategy
-  sessionStorage: new SQLiteSessionStorage(DB_PATH),
+  // sessionStorage: new SQLiteSessionStorage(DB_PATH),
+  sessionStorage: new PostgreSQLSessionStorage(
+    new URL('postgres://postgres:123456@127.0.0.1/product-search'),
+  )
 });
 
 export default shopify;

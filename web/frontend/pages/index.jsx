@@ -20,6 +20,7 @@ import { useAppQuery, useAuthenticatedFetch } from "../hooks";
 import { ProductsCard } from "../components/ProductsCard";
 import IndexFiltersDefaultExample from "../components/Products-table";
 import { useEffect, useMemo, useState } from "react";
+import Placeholder from "../assets/placeholder.webp";
 
 const PageSize = 8;
 
@@ -89,7 +90,7 @@ const onPrevious = () => {
   console.log('Pdata', Pdata)
   console.log("setIsLoading(!isLoading)}", isLoading);
   return (
-    <Page fullWidth>
+    <Page>
       <TitleBar title={t("HomePage.title")} primaryAction={null} />
       <Layout>
         <Layout.Section>
@@ -101,27 +102,32 @@ const onPrevious = () => {
               alignment="center"
             >
               <Stack.Item fill>
+              <HorizontalStack align="center">
+              <div style={{ padding: "0 20px", width: "220px" }}>
+                  {/* <Image
+                    source={trophyImage}
+                    alt={t("HomePage.trophyAltText")}
+                    width={120}
+                  /> */}
+                  <img style={{width: "100%"}} src={Placeholder} alt="" />
+                </div>  
+                </HorizontalStack>
                 <TextContainer spacing="loose">
                   <Text as="h2" variant="headingMd" alignment="center">
                     {t("HomePage.heading")}
                   </Text>
                   <p>
                   </p>
+                  <div style={{marginBottom: "40px"}}>
                   <HorizontalStack align="center">
-                    <Button onClick={() => {setIsLoading(!isLoading); setCurrentPage(1)}}>
+                    <Button primary  onClick={() => {setIsLoading(!isLoading); setCurrentPage(1)}}>
                       Show Products
                     </Button>
                   </HorizontalStack>
+                  </div>
                 </TextContainer>
-              </Stack.Item>
-              <Stack.Item>
-                <div style={{ padding: "0 20px" }}>
-                  <Image
-                    source={trophyImage}
-                    alt={t("HomePage.trophyAltText")}
-                    width={120}
-                  />
-                </div>
+              
+
               </Stack.Item>
             </Stack>
 

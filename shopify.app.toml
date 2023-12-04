@@ -2,7 +2,7 @@
 
 name = "products-app"
 client_id = "60d8381b2ac9c684114d71f416e16640"
-application_url = "https://spirit-foster-ice-ta.trycloudflare.com"
+application_url = "https://drop-arrest-cabinets-characteristics.trycloudflare.com"
 embedded = true
 
 [access_scopes]
@@ -11,10 +11,10 @@ scopes = "write_products"
 
 [auth]
 redirect_urls = [
-  "https://spirit-foster-ice-ta.trycloudflare.com/auth/callback",
-  "https://spirit-foster-ice-ta.trycloudflare.com/auth/shopify/callback",
-  "https://spirit-foster-ice-ta.trycloudflare.com/api/auth/callback",
-  "https://spirit-foster-ice-ta.trycloudflare.com/.shopify/graphiql/auth/callback"
+  "https://drop-arrest-cabinets-characteristics.trycloudflare.com/auth/callback",
+  "https://drop-arrest-cabinets-characteristics.trycloudflare.com/auth/shopify/callback",
+  "https://drop-arrest-cabinets-characteristics.trycloudflare.com/api/auth/callback",
+  "https://drop-arrest-cabinets-characteristics.trycloudflare.com/.shopify/graphiql/auth/callback"
 ]
 
 [webhooks]
